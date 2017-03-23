@@ -1,14 +1,14 @@
 # NfcReactNative
 
-nfc-ndef-react-native is a react-native module for android to write/read tags that support the NDEF format (tested on Mifare Classic). This is a fork of nfc-react-native. WIP.
+nfc-ndef-react-native is a react-native module for android to write/read tags that support the NDEF format (tested on Mifare Classic). This is a fork of Lube's nfc-react-native. WIP.
 
 ## Getting started
 
-`$ npm install nfc-react-native --save`
+`$ npm install nfc-ndef-react-native --save`
 
 ### Mostly automatic installation
 
-`$ react-native link nfc-react-native`
+`$ react-native link nfc-ndef-react-native`
 
 ### Manual installation
 
@@ -28,84 +28,8 @@ nfc-ndef-react-native is a react-native module for android to write/read tags th
     ```
 
 ## Usage
-```javascript
-import { getTagId, readTag, writeTag } from 'nfc-react-native'
 
-...
-export default class NfcSample extends Component {
-  readTagId() {
-    getTagId()
-  }
-
-  readTagData() {
-    readTag([
-      { sector: 1, blocks: [1,2], clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      { sector: 2, blocks: [0,1,2], clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      { sector: 3, blocks: [0], clave: 'FFFFFFFFFFFF', keyType: 'A' }
-    ])
-  }
-
-  writeTagData() {
-    writeTag([{ sector: 1, blocks: [ 
-    { index: 1, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] },
-    { index: 2, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] } ],
-      clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      { sector: 2, blocks: [ 
-    { index: 0, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] },
-    { index: 1, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] },
-    { index: 2, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] } ],
-      clave: 'FFFFFFFFFFFF', keyType: 'A' },
-    { sector: 3, blocks: [ 
-    { index: 0, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] } ],
-      clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      ], 1148002313)
-  }
-
-  componentDidMount() {
-    DeviceEventEmitter.addListener('onTagError', function (e) {
-        console.log('error', e)
-        Alert.alert(JSON.stringify(e))
-    })
-
-    DeviceEventEmitter.addListener('onTagDetected', function (e) {
-        Alert.alert(JSON.stringify(e))
-    })
-
-    DeviceEventEmitter.addListener('onTagRead', (e) => {
-        console.log('reading', e)
-        Alert.alert(JSON.stringify(e))
-    })
-
-    DeviceEventEmitter.addListener('onTagWrite', (e) => {
-        console.log('writing', e)
-        Alert.alert(JSON.stringify(e))
-    })
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Button
-          onPress={this.readTagId}
-          title="Get id of Tag"
-        />
-        <Button
-          onPress={this.readTagData}
-          title="Get sectors of a Tag"
-        />
-        <Button
-          onPress={this.writeTagData}
-          title="Write sectors of a Tag"
-        />
-      </View>
-    );
-  }
-}
-...
-```
+Take a look at the example.
 
 ## Configuration
 
@@ -132,17 +56,18 @@ Your main activity should look like
 </activity>
 ```
 
-Add a xml file in android/app/src/main/res folder (create if it doesn't exist) with the following:
+Add android/app/src/main/res/xml/nfc_tech_filter.xml (create directories that don't exist) with the following:
 ```xml
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <tech-list>
-    <tech>android.nfc.tech.MifareClassic</tech>
+    <tech>android.nfc.tech.Ndef</tech>
+    <tech>android.nfc.tech.NdefFormatable</tech>
   </tech-list>
 </resources>
 ```
 
 ## Contribution
-Contributions are welcome :raised_hands:
+Please feel free to contribute in anyway!
 
 ## License
 This repository is distributed under [MIT license](https://github.com/Lube/nfc-react-native/blob/master/LICENSE) 

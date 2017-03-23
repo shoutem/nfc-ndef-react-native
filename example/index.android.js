@@ -23,27 +23,11 @@ export default class NfcSample extends Component {
   }
 
   readTagData() {
-    readTag([
-      { sector: 1, blocks: [1,2], clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      { sector: 2, blocks: [0,1,2], clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      { sector: 3, blocks: [0], clave: 'FFFFFFFFFFFF', keyType: 'A' }
-    ])
+	readTag(); // Read all records in the NDEF Message on the tag.
   }
 
   writeTagData() {
-    writeTag([{ sector: 1, blocks: [ 
-    { index: 1, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] },
-    { index: 2, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] } ],
-      clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      { sector: 2, blocks: [ 
-    { index: 0, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] },
-    { index: 1, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] },
-    { index: 2, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] } ],
-      clave: 'FFFFFFFFFFFF', keyType: 'A' },
-    { sector: 3, blocks: [ 
-    { index: 0, data: [15,15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,15,15] } ],
-      clave: 'FFFFFFFFFFFF', keyType: 'A' },
-      ], 1148002313)
+	writeTag(["foo", "bar"]); // Write these strings to individual NDEF records.
   }
 
   componentDidMount() {

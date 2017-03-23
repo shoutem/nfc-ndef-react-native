@@ -1,4 +1,4 @@
-package es.tiarg.nfcreactnative;
+package es.tiarg.nfcndefreactnative;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class NfcReactNativePackage implements ReactPackage {
+public class NfcNdefReactNativePackage implements ReactPackage {
     /**
      * @param reactContext react application context that can be used to create modules
      * @return list of native modules to register with the newly created catalyst instance
@@ -18,7 +18,7 @@ public class NfcReactNativePackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new NfcReactNativeModule(reactContext));
+        modules.add(new NfcNdefReactNativeModule(reactContext));
 
         return modules;
     }
