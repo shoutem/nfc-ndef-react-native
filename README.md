@@ -24,16 +24,16 @@ If it doesn't work for any reason, follow the manual installation AND the config
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import es.tiarg.nfcreactnative.NfcReactNativePackage;` to the imports at the top of the file
-  - Add `new NfcReactNativePackage()` to the list returned by the `getPackages()` method
+  - Add `import es.tiarg.nfcndefreactnative.NfcNdefReactNativePackage;` to the imports at the top of the file
+  - Add `new NfcNdefReactNativePackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
     ```
-    include ':nfc-react-native'
-    project(':nfc-react-native').projectDir = new File(rootProject.projectDir,  '../node_modules/nfc-react-native/android')
+    include ':nfc-ndef-react-native'
+    project(':nfc-ndef-react-native').projectDir = new File(rootProject.projectDir,  '../node_modules/nfc-ndef-react-native/android')
     ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
     ```
-      compile project(':nfc-react-native')
+      compile project(':nfc-ndef-react-native')
     ```
 
 ## Usage
