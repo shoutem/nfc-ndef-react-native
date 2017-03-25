@@ -1,6 +1,6 @@
 # NfcReactNative
 
-nfc-ndef-react-native is a react-native module for android to write/read tags that support the NDEF format (tested on Mifare Classic). This is a fork of Lube's nfc-react-native.
+nfc-ndef-react-native is a react-native module for android to write/read tags that support the NDEF format (tested on Mifare Classic). This is a fork of Lube's nfc-react-native. It only writes strings to the ndef records. So you can write and read essentially an array of strings to your card. With some minor tweaking to the Java, you could make it support other data types as well.
 
 ## Quick and Easy Demo
 
@@ -15,9 +15,11 @@ nfc-ndef-react-native is a react-native module for android to write/read tags th
 
 ### Mostly automatic installation
 
+After running this command, go through the Configuration section:
+
 `$ react-native link nfc-ndef-react-native`
 
-If it doesn't work for any reason, follow the manual installation AND the configuration section.
+If it doesn't work for any reason, follow the manual installation AND the configuration section. 
 
 ### Manual installation
 
