@@ -219,6 +219,7 @@ class NfcNdefReactNativeModule extends ReactContextBaseJavaModule implements Act
             setupForegroundDispatch(getCurrentActivity(), mNfcAdapter);
         } else {
             mNfcAdapter = NfcAdapter.getDefaultAdapter(this.reactContext);
+            setupForegroundDispatch(getCurrentActivity(), mNfcAdapter);
         }
     }
 
