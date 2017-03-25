@@ -1,6 +1,6 @@
 {
   "name": "nfc-ndef-react-native",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "NFC Wrapper using the NDEF format. Built from Lube's nfc-react-native.",
   "main": "index.android.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-	"url": "https://github.com/observ3r/nfc-ndef-react-native.git"
+    "url": "https://github.com/observ3r/nfc-ndef-react-native.git"
   }
 }
