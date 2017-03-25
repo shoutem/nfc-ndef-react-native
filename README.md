@@ -10,6 +10,8 @@ nfc-ndef-react-native is a react-native module for android to write/read tags th
 
 `$ react-native link nfc-ndef-react-native`
 
+If it doesn't work for any reason, follow the manual installation AND the configuration section.
+
 ### Manual installation
 
 #### Android
@@ -38,7 +40,7 @@ In your manifest add:
 <uses-permission android:name="android.permission.NFC" />
 ....
 ```
-Your main activity should look like
+Your main activity should look something like this:
 ```xml
 ...
 <activity
@@ -48,7 +50,10 @@ Your main activity should look like
   android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
 
   <intent-filter>
-    <action android:name="android.nfc.action.TECH_DISCOVERED"/>
+			<action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+			<category android:name="android.intent.category.DEFAULT"/>	
+			<data android:mimeType="text/plain" />
+            <action android:name="android.nfc.action.TECH_DISCOVERED"/>
   </intent-filter>
 
   <meta-data android:name="android.nfc.action.TECH_DISCOVERED"

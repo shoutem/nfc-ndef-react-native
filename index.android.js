@@ -2,6 +2,6 @@ import React from 'react-native';
 
 const NfcNdefReactNative = React.NativeModules.NfcNdefReactNative;
 
-export const readTag = NfcReactNative.readTag;
-export const writeTag = NfcReactNative.writeTag;
-export const getTagId = NfcReactNative.getTagId;
+export const readTag = NfcNdefReactNative.readTag;
+export const writeTag = NfcNdefReactNative.writeTag;
+export const getTagId = NfcNdefReactNative.getTagId;

@@ -1,0 +1,4 @@
+#Fri Mar 24 22:51:16 EDT 2017
+base.0=/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

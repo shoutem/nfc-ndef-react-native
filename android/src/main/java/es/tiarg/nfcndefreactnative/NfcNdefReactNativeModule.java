@@ -1,5 +1,5 @@
-package es.tiarg.nfcreactnative;
-//package es.tiarg.nfcndefreactnative;
+package es.tiarg.nfcndefreactnative;
+
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -8,6 +8,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableArray;
+import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableNativeArray;
@@ -55,8 +56,7 @@ import static android.view.View.X;
 import static com.facebook.common.util.Hex.hexStringToByteArray;
 
 
-// TODO change name
-class NfcReactNativeModule extends ReactContextBaseJavaModule implements ActivityEventListener, LifecycleEventListener {
+class NfcNdefReactNativeModule extends ReactContextBaseJavaModule implements ActivityEventListener, LifecycleEventListener {
     private ReactApplicationContext reactContext;
 
     private boolean idOperation;
@@ -65,7 +65,7 @@ class NfcReactNativeModule extends ReactContextBaseJavaModule implements Activit
     private int tagId;
 
     private ReadableArray sectores;
-	private String to_write;
+	private ReadableArray to_write;
 	private int index;
 
     private NfcAdapter mNfcAdapter;
@@ -96,16 +96,14 @@ class NfcReactNativeModule extends ReactContextBaseJavaModule implements Activit
     private class ThreadLectura implements Runnable {
         public void run() {
             if (tag != null && (idOperation || readOperation || writeOperation)) {
-				Log.i("ReactNative", "[+] [NfcReactNative] -> ThreadLectura.run() Op: " + String.valueOf(readOperation) + " " + String.valueOf(writeOperation) );
+				//Log.i("ReactNative", "[+] [NfcNdefReactNative] -> ThreadLectura.run() Op: " + String.valueOf(readOperation) + " " + String.valueOf(writeOperation) );
 				try {
 
 					//ByteBuffer bb = ByteBuffer.wrap(tag.getId());
 					//int id = bb.getInt();
 
 					if (idOperation) {
-						Log.i("ReactNative", "[+] [NfcReactNative] -> ThreadLectura.run() ID Op: " + Integer.toString(id) );
-						//Ndef ndef_tag = Ndef.get(tag);
-						//tag.connect();
+						//Log.i("ReactNative", "[+] [NfcNdefReactNative] -> ThreadLectura.run() ID Op: " + Integer.toString(id) );
 
 						WritableMap idData = Arguments.createMap();
 						idData.putInt("id", id);
@@ -122,27 +120,41 @@ class NfcReactNativeModule extends ReactContextBaseJavaModule implements Activit
 						if (!ndef_tag.isConnected()) {
 							return;
 						}
+						// Use the cached one if you want... but if you write and the read, you wont get what you wrote.
+						//NdefMessage mes = ndef_tag.getCachedNdefMessage();
+						NdefMessage mes = ndef_tag.getNdefMessage();
+						NdefRecord[] ndef_records = mes.getRecords();
+						WritableArray recs = new WritableNativeArray();
 
-						NdefMessage mes = ndef_tag.getCachedNdefMessage();
-						Log.i("ReactNative", "[+] [NfcReactNative] -> ThreadLectura.run() Message: " + mes.toString() );
-
-						NdefRecord rec = mes.getRecords()[index];
-						Log.i("ReactNative", "[+] [NfcReactNative] -> ThreadLectura.run() Record: " + rec.toString() );
-						
-						String payload = new String(rec.getPayload(), "US-ASCII");
-						Log.i("ReactNative", "[+] [NfcReactNative] -> ThreadLectura.run() Payload String usascii: " + payload );
-						Log.i("ReactNative", "[+] [NfcReactNative] -> ThreadLectura.run() Payload b: " + rec.getPayload() );
+						for (int i = 0; i<ndef_records.length; i++) {
+							recs.pushString(new String(ndef_records[i].getPayload(), "US-ASCII"));
+						}
+						//Log.i("ReactNative", "[+] [NfcNdefReactNative] -> ThreadLectura.run() Payloads: " + records[0] );
 
                         reactContext
                                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                                .emit("onTagRead", mes.getRecords());
+                                .emit("onTagRead", recs);
 					
 						readOperation = false;
 						ndef_tag.close();
 
 					} else if (writeOperation) {
-						NdefRecord rec = createTextRecord(to_write, new Locale("us"), true);
-						NdefMessage mes = new NdefMessage(rec);
+
+						int s = to_write.size();
+						NdefRecord[] recs = new NdefRecord[s];
+						Log.i("ReactNative", "[+] [NfcNdefReactNative] -> ThreadLectura.run() len: " + Integer.toString(s));
+
+						// This one's just for logging and sending to React
+						WritableArray wrote = new WritableNativeArray();
+
+						for (int i = 0; i<s; i++) {
+							String cur = to_write.getString(i);
+							Log.i("ReactNative", "[+] [NfcNdefReactNative] -> ThreadLectura.run() Writing: " + cur);
+							recs[i] = createTextRecord(cur, new Locale("us"), true);
+							wrote.pushString(cur);
+						}
+
+						NdefMessage mes = new NdefMessage(recs);
 						NdefFormatable form_tag = NdefFormatable.get(tag);
 
 						if (form_tag == null) {
@@ -161,6 +173,10 @@ class NfcReactNativeModule extends ReactContextBaseJavaModule implements Activit
 							form_tag.close();
 						}
 						
+						reactContext
+								.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+								.emit("onTagWrite", wrote);
+
 						writeOperation = false;
 					}
 
@@ -180,12 +196,11 @@ class NfcReactNativeModule extends ReactContextBaseJavaModule implements Activit
         }
     }
 
-    public NfcReactNativeModule(ReactApplicationContext reactContext) {
+    public NfcNdefReactNativeModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
         this.tag = null;
 		this.index = 0;
-		this.to_write = "";
 
         this.reactContext.addActivityEventListener(this);
         this.reactContext.addLifecycleEventListener(this);
@@ -248,7 +263,7 @@ class NfcReactNativeModule extends ReactContextBaseJavaModule implements Activit
 
     @Override
     public void onNewIntent(Intent intent) {
-		Log.i("ReactNative", "onNewIntent");
+		Log.i("ReactNative", "[+] [NfcNdefReactNative] New intent.");
         handleIntent(intent);
     }
 
@@ -265,24 +280,24 @@ class NfcReactNativeModule extends ReactContextBaseJavaModule implements Activit
      */
     @Override
     public String getName() {
-        return "NfcReactNative";
+        return "NfcNdefReactNative";
     }
 
     @ReactMethod
-    public void readTag(int index) {
+    public void readTag() {
         this.index = index;
         this.readOperation = true;
     }
 
     @ReactMethod
-    public void writeTag(String to_write) {
+    public void writeTag(ReadableArray to_write) {
         this.to_write = to_write;
         this.writeOperation = true;
     }
 
     @ReactMethod
     public void getTagId() {
-		Log.i("ReactNative", "[+] [NfcReactNative] -> getTagId()");
+		Log.i("ReactNative", "[+] [NfcNdefReactNative] -> getTagId()");
         this.idOperation = true;
     }
 }

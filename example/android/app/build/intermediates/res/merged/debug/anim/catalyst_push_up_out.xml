@@ -11,4 +11,3 @@
           android:duration="@android:integer/config_shortAnimTime"
           />
 </set>
-<!-- From: file:/home/dev/Dev/J/React-Native/NfcSample/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.40.0/res/anim/catalyst_push_up_out.xml -->

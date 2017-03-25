@@ -2,11 +2,229 @@
 <items version="2" >
 
     <item
-        jar="/home/dev/Dev/J/React-Native/NfcSample/android/app/build/intermediates/exploded-aar/NfcSample/nfc-react-native/unspecified/jars/classes.jar"
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
         jumboMode="false"
+        optimize="true"
         revision="23.0.1"
-        sha1="1fc3618b3367c53827e054f79be8166875a16ca6">
-        <dex dex="/home/dev/Dev/J/React-Native/NfcSample/android/app/build/intermediates/pre-dexed/debug/classes-aedc416e19a0ffe712047a3587da66b1ec0f6195.jar" />
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_d2e86884ba3d8251138fe1165d811a02062de210.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-0.11.0_66b903686326a2f9a26ed56bd1d25c2ff5874450.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_9c486e9ff709fa2b47a90a784adc111d3d22266f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_a892346fac08a2b16274ba341c6971b374db77a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_cba54dd726ea3d62e3099a827414b1814c56a8e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_59654ddbb933154ed3c3f3bd6ac69ce67cf456bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_85706a95a8f2909f382dc8d18cea193af337b541.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_624418d5c306ebea4d9ae9a7b916ecf2501f36ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_4960339c797b0189224cec90ad39b44bcf841f9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/NfcNdefSample/nfc-ndef-react-native/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6002e2c022d72d3f00156977afa71d9ea55fc9e7">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/NfcNdefSample-nfc-ndef-react-native-unspecified_212e4269c65fc863b977dae8ba69b622840399eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_9f3ab95423718a19eda2c292a149b25643bbdb43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_3aa5c4f3253e82a3fdfc3a97db5f3e7fbbfd04d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-0.11.0_38682b5616e1f6242a31c1d93915ab5940550d1e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.0_973b696e56e0aa1df2fbc71981b25e5407328b45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-0.11.0_857098161d8d0dc3d15f858e46ce3d0af81b70d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_7b0b00c9e37fb440424984289071aefb0302d985.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/library-2.4.0_61eceff23fb4d048bcf692813dce624c0faefadd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-0.11.0_5a0895a5d7ab1768ce8199c439a1ab130d589960.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/opt/android-sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_dd6f09acbb6b6c3912360532c72c2ca793d2b6e1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.42.3/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5_4b8f8fcb0b643aeac10991b4d5c86b931f297179.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_92870542d07cb5944b90356a7a1361c03efb3dfd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-0.11.0_509c0983a930a70c4f1e546a696a38e0a113e720.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_cc2759768a37860751b83cfe85cafdb3af21fa53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-0.11.0_ea22615c6bdb24af1c35da00601aa1b200956bcd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.42.3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="962b06c207e808c0557ffd6163ac584025a96021">
+        <dex dex="/home/observ3r/projects/omni/tests/nfc/NfcNdefSample/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.42.3_abc657ac7ee430183d6d82810ed7141f33f5b165.jar" />
     </item>
 
 </items>

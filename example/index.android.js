@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { getTagId, readTag, writeTag } from 'nfc-react-native'
+import { getTagId, readTag, writeTag } from 'nfc-ndef-react-native'
 
 import {
   AppRegistry,
@@ -17,7 +17,7 @@ import {
   DeviceEventEmitter
 } from 'react-native';
 
-export default class NfcSample extends Component {
+export default class NfcNdefSample extends Component {
   readTagId() {
     getTagId()
   }
@@ -55,7 +55,7 @@ export default class NfcSample extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          nfc-ndef-react-native demo
         </Text>
         <Button
           onPress={this.readTagId}
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('NfcSample', () => NfcSample);
+AppRegistry.registerComponent('NfcNdefSample', () => NfcNdefSample);
