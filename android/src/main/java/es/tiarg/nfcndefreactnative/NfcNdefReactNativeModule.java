@@ -237,7 +237,7 @@ class NfcNdefReactNativeModule extends ReactContextBaseJavaModule implements Act
     private void handleIntent(Intent intent) {
 		Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);  
 
-		Log.i("ReactNative", Arrays.toString(tagFromIntent.getTechList()));
+		//Log.i("ReactNative", Arrays.toString(tagFromIntent.getTechList()));
 
 		if (true) { //Arrays.asList(tagFromIntent.getTechList()).contains(android.nfc.tech.NdefFormatable)) {
 			this.tag = tagFromIntent; // NdefFormatable.get(tagFromIntent);
